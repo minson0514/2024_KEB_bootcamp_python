@@ -1,9 +1,12 @@
-x=2
-y=x+5
-print(y)
+money = 5,000,000
+print(money)
+print(type(money)) #class tuple
 
-print(type(3.14))
-print(type(3.14)==float)
-print(isinstance(3.14,float))
-print(isinstance("Inha", float))
-print(isinstance(55,float))
+cash = 5_000_000
+print(cash)
+print(type(cash)) #class int
+
+#거듭제곱 **
+base_number = int(input('Input base number : '))
+exponent_number = int(input('Input base number : '))
+print(f'밑은 {base_number}, 지수는{exponent_number}, 결과값은 {base_number**exponent_number}')
