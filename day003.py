@@ -1,59 +1,35 @@
+#sequence type 자료형: 순서를 가진 자료형
+#cf 튜플 딕셔너리 리스트 등
 '''
-total = 0
-num=[1,2,3]
-i=0
-while i<3:
-    total=total+num[i]
-    i=i+1
-print(total)
-'''
-
-#소수인지 아닌지 판정하는 프로그램
-#prime number: 1과 자기 자신 외에는 나누어 떨어지지 않음
-'''
-number = int(input("input num: "))
-cnt = 0 #counter variable
-i = 1
-while i <= number:
-    if number % i == 0:
-        cnt += 1
+univ = "inha"
+i = 0
+while i < len(univ):
+    print(univ[i], end=' ') #end는 줄바꿈 대신 띄어쓰기
     i+=1
-if cnt == 2:
-    print("%d is prime number"%number)
-else:
-    print("%d is NOT prime nuber" %number)
 '''
 
-#좀 더 논리적
-'''
-number = int(input("input num: "))
-cnt = 0 #counter variable
-i = 2 #2부터 나눔
-while i < number: #자기 자신 제외
-    if number % i == 0:
-        cnt += 1
+univ = "inha"
+#side effect가 발생할 수 있는 코드
+#특정 구간만 출력하고 싶을 때는 이 방식을 사용해야함
+i = 0
+while i < len(univ):
+    print(univ[i], end=' ') #end는 줄바꿈 대신 띄어쓰기
     i+=1
-if cnt == 0: #한번도 나누어 떨어지지 않으면 소수
-    print("%d is prime number"%number)
-else:
-    print("%d is NOT prime nuber" %number)
-'''
+print("\n")
 
-#성능 이슈 해결
-number = int(input("input num: "))
-is_prime = True #int type-> boolean
-if number <= 1: #1이 소수가 아니니까 해당 코드 추가
-    print("%d is NOT prime nuber" % number)
-else:
+#내부적으로 알아서 동작하는 코드 더 안전함
+#side effect 없음 전체 문장 출력 하는 데에 최적화
+for letter in univ:
+    print(letter, end=' ')
+print("\n")
 
-    i = 2 #2부터 나눔
-    while i < number: #자기 자신 제외
-        if number % i == 0:
-            is_prime = False #remove +
-            break #약수가 한번이라도 발생하면 루프 탈출
-            #number=111 일 때 3번까지 돌고 break
-        i += 1
-    if is_prime: #remove ==
-        print("%d is prime number"%number)
-    else:
-        print("%d is NOT prime nuber" %number)
+#for문에서 range를 쓰면 구간 지정해서 출력 가능
+for k in range(0,len(univ), 1): #0부터 univ변수의 문자열 길이까지 1간격으로
+    print(univ[k], end = ' ')
+print("\n")
+
+#range 기본 시작값이 0이고 step의 기본값이 1
+for k in range(len(univ)): #0부터 univ변수의 문자열 길이까지 1간격으로
+    print(univ[k], end = ' ')
+
+#cancel with break
