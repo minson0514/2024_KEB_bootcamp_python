@@ -1,26 +1,31 @@
-#섭씨 화씨 간 변환
-'''
-menu = input("1) Fahrenheit -> Celsius  2) Celsius -> Fahrenheit : ")
-if menu == '1':
-    fahrenheit =float(input("input Fahrenheit : "))
-    print('Fahrenheit : %f F, Celsius : %.4f C' %(fahrenheit,(fahrenheit-32.0)*5.0/9.0))
-elif menu == '2':
-    celsius = float(input("input Celsius : "))
-    print(f'Celsius {celsius}C, Fahrenheit {((celsius*9.0/5.0)+32.0): .4f}F')
+#raw string
+''''
+university = r"Inha \n university!"#Inha \n university!
+print(university)#특수기호 자체를 보여줌
 '''
 
-#assignment (loop)
+#문자열에서 + 쓰면 문자열끼리 붙여줌
+'''
+num1= input("enter first number : ")#str형
+num2= input("enter second number : ")
+print(num1+num2) #concatenation때문에 문자열끼리 결합함
+print(num1*3) #duplicate
+print(num1+3) #문자열과 숫자 사이에 산술연산자를 넣어서 error발생
+'''
+#역방향인덱싱
+'''
+letters = ("abcdefghijklmnopqrstuvwxyz")
+print(letters[-1]) #역방향 인덱싱 z
+'''
 
-#반복문 while
-while True: #infinite loop
-    menu = input("1) Fahrenheit -> Celsius  2) Celsius -> Fahrenheit : 3) Quit program : ")
-
-    if menu == '1':
-        fahrenheit = float(input("input Fahrenheit : "))
-        print('Fahrenheit : %f F, Celsius : %.4f C' % (fahrenheit, (fahrenheit - 32.0) * 5.0 / 9.0))
-    elif menu == '2':
-        celsius = float(input("input Celsius : "))
-        print(f'Celsius {celsius}C, Fahrenheit {((celsius * 9.0 / 5.0) + 32.0): .4f}F')
-    elif menu =='3':
-        print('Terminate Program.')
-        break
+#get a substring with a slice
+#[:] 슬라이싱
+'''
+university ="Inha\nuniversity!" #\n은 한 글자로 침
+print(university[:4]) #inha
+print(university[:-11]) #" 처음부터 -11까지, 역방향 인덱싱
+print(university[:])
+print(len(university)) #문자열 길이 리턴
+#16글자고 0부터 시작이니까 마지막 y는 15번
+print((university[::1])) #처음부터 끝까지 1 간격으로 리턴
+'''
