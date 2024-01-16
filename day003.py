@@ -27,13 +27,14 @@ print(tuple(range(3,9)))#(3, 4, 5, 6, 7, 8)
 #-> 메모리 공간을 효율적으로 사용
 #tuple data structure: read only -> cannot be popped
 '''
-
+'''
 numbers = input("input first second number : ").split()
 #input two nums and split them
 #data type -> list (it has two components)
 n1 = int(numbers[0])
 n2 = int(numbers[1])
-
+if n1 > n2: #non temporary variable
+    n1, n2 = n2, n1 #unpacking
 for number in range(n1,n2+1): #from n1 ~ to n2+1
     is_prime = True #reset
     if number <= 1:
@@ -44,3 +45,4 @@ for number in range(n1,n2+1): #from n1 ~ to n2+1
                 is_prime = False
                 break #escape ^for^
         if is_prime: print(number, end=' ')
+'''
